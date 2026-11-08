@@ -582,6 +582,11 @@ function setupEventListeners() {
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
+
   // Toast Trigger for APK Downloads
   function triggerDownloadToast(name, size) {
     const toast = document.getElementById("toastNotification");
