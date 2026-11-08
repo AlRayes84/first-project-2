@@ -1,0 +1,15 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.AuroraVPN" parent="Theme.Material3.Dark">
+        <item name="colorPrimary">@color/indigo_500</item>
+        <item name="colorSecondary">@color/cyan_400</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+    </style>
+
+    <style name="Theme.AuroraVPN.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
