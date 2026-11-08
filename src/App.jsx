@@ -383,7 +383,10 @@ export default function App() {
 
         {/* Server Selection Modal */}
         {showServerModal && (
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col justify-end animate-fadeIn">
+          <div 
+            onClick={(e) => { if (e.target === e.currentTarget) setShowServerModal(false); }}
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col justify-end animate-fadeIn"
+          >
             <div className="bg-slate-900 rounded-t-[32px] border-t border-slate-800 p-6 max-h-[75%] flex flex-col shadow-2xl">
               <div className="flex justify-between items-center mb-4">
                 <div className="flex items-center space-x-2">
@@ -438,7 +441,10 @@ export default function App() {
 
         {/* APK Download Modal */}
         {showApkModal && (
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn">
+          <div 
+            onClick={(e) => { if (e.target === e.currentTarget) setShowApkModal(false); }}
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+          >
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-sm shadow-2xl relative space-y-4">
               <button 
                 onClick={() => setShowApkModal(false)}
