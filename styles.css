@@ -1511,3 +1511,96 @@ input:checked + .slider:before {
   font-size: 0.8rem;
   color: var(--text-dim);
 }
+
+/* ==========================================================================
+   Toast Notification & Sticky Mobile Bar
+   ========================================================================== */
+.toast-notification {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 90vw;
+  width: 380px;
+}
+
+.toast-notification.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+}
+
+.toast-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.toast-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.toast-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Mobile Sticky Download Bar */
+.mobile-sticky-download-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-accent);
+  padding: 12px 20px;
+  z-index: 900;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-sticky-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sticky-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.mobile-sticky-meta {
+  font-size: 0.72rem;
+  color: var(--cyan);
+}
+
+.mobile-download-btn {
+  padding: 10px 18px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-download-bar {
+    display: flex;
+  }
+  body {
+    padding-bottom: 70px;
+  }
+}
+

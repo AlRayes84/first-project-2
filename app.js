@@ -582,8 +582,38 @@ function setupEventListeners() {
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  });
+  // Toast Trigger for APK Downloads
+  function triggerDownloadToast(name, size) {
+    const toast = document.getElementById("toastNotification");
+    if (!toast) return;
+    const title = toast.querySelector(".toast-title");
+    const desc = toast.querySelector(".toast-desc");
+    if (title) title.textContent = `Downloading ${name}...`;
+    if (desc) desc.textContent = `File size: ${size}. Tap the notification when complete to install.`;
+    toast.classList.remove("hidden");
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 5000);
+  }
+
+  const btnDownloadMain = document.getElementById("btnDownloadMain");
+  if (btnDownloadMain) {
+    btnDownloadMain.addEventListener("click", () => {
+      triggerDownloadToast("AuroraVPN.apk", "37.6 MB");
+    });
+  }
+
+  const btnStickyDownload = document.getElementById("btnStickyDownload");
+  if (btnStickyDownload) {
+    btnStickyDownload.addEventListener("click", () => {
+      triggerDownloadToast("AuroraVPN.apk", "37.6 MB");
+    });
+  }
+
+  const secondaryDownloadBtn = document.querySelector('a[href*="AuroraVPN-Shadowsocks.apk"]');
+  if (secondaryDownloadBtn) {
+    secondaryDownloadBtn.addEventListener("click", () => {
+      triggerDownloadToast("AuroraVPN-Shadowsocks.apk", "24.9 MB");
+    });
+  }
 }
