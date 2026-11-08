@@ -4,6 +4,7 @@
   "description": "[![Build Android APK](https://github.com/AlRayes84/first-project-2/actions/workflows/build-apk.yml/badge.svg)](https://github.com/AlRayes84/first-project-2/actions/workflows/build-apk.yml) [![Android](https://img.shields.io/badge/Android-7.0%2B%20(API%2024%2B)-3DDC84?logo=android&logoColor=white)](https://developer.android.com) [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org) [![WireGuard](https://img.shields.io/badge/Protocol-WireGuard%20%7C%20OpenVPN-0080FF)](https://www.wireguard.com) [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)",
   "main": "app.js",
   "scripts": {
+    "build": "esbuild src/index.jsx --bundle --minify --outfile=dist/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
